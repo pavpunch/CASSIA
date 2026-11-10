@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { Chess, type Square, type Move } from "chess.js";
-import { Activity, ArrowLeftRight, BookOpen, ChevronRight, CircleHelp, Crown, History, LayoutDashboard, Menu, RotateCcw, Shield, Swords, Trophy, UserRound, X } from "lucide-react";
+import { Activity, BookOpen, ChevronRight, CircleHelp, Crown, History, LayoutDashboard, Menu, RotateCcw, Shield, Swords, Trophy, UserRound, X } from "lucide-react";
 
 type Page = "Overview" | "Play" | "Coaches" | "Review" | "Profile";
 const nav: { name: Page; icon: typeof LayoutDashboard }[] = [
