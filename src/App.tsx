@@ -1,5 +1,5 @@
-import { useMemo, useState } from "react";
-import { Activity, ArrowDownRight, ArrowRight, Bell, BookOpen, ChevronDown, ChevronLeft, ChevronRight, CircleHelp, Crown, Flame, History, LayoutGrid, Menu, MessageCircle, MoreHorizontal, Play, Plus, Search, Settings2, Shield, Sparkles, Swords, Target, Trophy, UserRound, X } from "lucide-react";
+import { useState } from "react";
+import { Activity, ArrowRight, Bell, BookOpen, ChevronDown, ChevronRight, Crown, Flame, History, LayoutGrid, Menu, MoreHorizontal, Play, Search, Settings2, Shield, Sparkles, Swords, Target, Trophy, UserRound, X } from "lucide-react";
 
 type Section = "Overview" | "Play" | "Coaches" | "Review" | "Profile";
 const navigation: { label: Section; icon: typeof LayoutGrid }[] = [
@@ -34,7 +34,6 @@ export default function App() {
   const [notice, setNotice] = useState("");
   const [mobileNav, setMobileNav] = useState(false);
   const coach = coaches.find((item) => item.name === selectedCoach) ?? coaches[0];
-  const movePairs = useMemo(() => Array.from({ length: Math.ceil(moves.length / 2) }, (_, i) => [moves[i * 2], moves[i * 2 + 1]]), [moves]);
   function selectSquare(square: string, row: number, col: number) {
     if (!selectedSquare) { if (board[row][col]) setSelectedSquare(square); return; }
     const [fromRow, fromCol] = selectedSquare.split("-").map(Number);
